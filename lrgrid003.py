@@ -96,7 +96,7 @@ confirmedStates = {}
 workedGrids     = {}
 dxcc6           = {}
 
-of = open('c:\\python27\\stringsout.txt', 'w', 1)
+of = open('stringsout.txt', 'w', 1)
 
 class ReaderThread(Thread):
         def __init__(self, telnet):
@@ -190,8 +190,8 @@ def LoadWorkedGrids():
             #print key + " " + val
         print("Loading Worked Grids ")
         
-        #for key in sorted(workedGrids.keys()):
-        #  print key, workedGrids[key]
+        for key in sorted(workedGrids.keys()):
+          print(key, workedGrids[key])
 
 def LoadAllFFMAGrids():
 
@@ -211,13 +211,14 @@ def Loaddxcc6():
     global dxcc6
     with open("dxcc6.txt") as dx6:
         for line in dx6:
+            print(line)
             (key, val) = line.split(" ")
             dxcc6[key] = val
             #print key + " " + val
         print("Loading 6 Meter DXCC ")
         
         #for key in sorted(dxcc6.keys()):
-        #  print key, dxcc6[key]
+        #  print(key, dxcc6[key])
 
 def LoadConfirmedStates():
 
